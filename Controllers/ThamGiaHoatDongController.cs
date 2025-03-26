@@ -15,20 +15,49 @@ public class ThamGiaHoatDongController : Controller
       _context = context;
    }
 
-   // GET: Hiển thị danh sách hoạt động
-   public async Task<IActionResult> Index()
-   {
-      var username = HttpContext.Session.GetString("Username");
-      var hoatDongs = await _context.ThamGiaHoatDongs
-         .Include(h => h.SinhVien)
-         .Include(h => h.TieuChi)
-         .Where(h => h.MaSinhVien == username) // Lọc theo MaSinhVien
-         .ToListAsync(); // Trả về danh sách
-      return View(hoatDongs);
-   }
+    // GET: Hiển thị danh sách hoạt động
+    //public async Task<IActionResult> Index()
+    //{
+    //   var username = HttpContext.Session.GetString("Username");
+    //   var hoatDongs = await _context.ThamGiaHoatDongs
+    //      .Include(h => h.SinhVien)
+    //      .Include(h => h.TieuChi)
+    //      .Where(h => h.MaSinhVien == username) // Lọc theo MaSinhVien
+    //      .ToListAsync(); // Trả về danh sách
+    //   return View(hoatDongs);
+    //}
+    public async Task<IActionResult> Index(int? maTieuChi, string? maSinhVien)
+    {
+        var username = HttpContext.Session.GetString("Username");
 
-   // GET: Hiển thị form tạo mới
-   public IActionResult Create()
+        // Nếu không có mã sinh viên, lấy từ session (trường hợp sinh viên tự xem)
+        if (string.IsNullOrEmpty(maSinhVien))
+        {
+            maSinhVien = username;
+        }
+
+        // Nếu không có mã tiêu chí, lấy tất cả hoạt động của sinh viên
+        var query = _context.ThamGiaHoatDongs
+           .Include(h => h.SinhVien)
+           .Include(h => h.TieuChi)
+           .Where(h => h.MaSinhVien == maSinhVien);
+
+        if (maTieuChi.HasValue)
+        {
+            query = query.Where(h => h.MaTieuChi == maTieuChi);
+        }
+
+        var danhSachThamGia = await query.ToListAsync();
+
+        if (!danhSachThamGia.Any())
+        {
+            TempData["Error"] = "Không có dữ liệu tham gia hoạt động!";
+        }
+
+        return View(danhSachThamGia);
+    }
+    // GET: Hiển thị form tạo mới
+    public IActionResult Create()
    {
       ViewBag.TieuChiList = new SelectList(_context.TieuChis.ToList(), "MaTieuChi", "TenTieuChi");
       return View();

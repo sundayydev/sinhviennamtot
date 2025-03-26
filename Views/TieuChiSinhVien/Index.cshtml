@@ -1,0 +1,53 @@
+﻿@model List<CSDLNC_QuanLySVNamTot.Models.TieuChiSinhVien>
+
+@{
+    ViewData["Title"] = "Danh Sách Đánh Giá Tiêu Chí";
+    var role = Context.Session.GetString("Role");
+}
+
+<h2>Danh Sách Đánh Giá Tiêu Chí</h2>
+
+<table class="table table-bordered">
+
+    <thead class="table-dark">
+        <tr>
+            <th>Tiêu Chí</th>
+            <th>Minh Chứng</th> <!-- Nút dẫn đến bảng tham gia hoạt động -->
+            <th>Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var danhGia in Model)
+        {
+            <tr>
+                <td>@danhGia.TieuChi?.TenTieuChi</td> <!-- Tên tiêu chí -->
+                <td>
+                    <a class="btn btn-info"
+                       asp-controller="ThamGiaHoatDong"
+                       asp-action="Index"
+                       asp-route-maTieuChi="@danhGia.MaTieuChi"
+                       asp-route-maSinhVien="@danhGia.MaSinhVien">
+                        📄 Minh Chứng
+                    </a>
+                </td>
+
+                <td class="d-flex align-items-center gap-2">
+                    <span class="fw-bold px-3 py-1 border rounded text-center
+                     @(danhGia.DanhGia == "Duyet" ? "text-success border-success" : "text-danger border-danger")">
+                        @(danhGia.DanhGia == "Duyet" ? "Duyệt" : "Từ Chối")
+                    </span>
+                    @if (role != "SinhVien"){
+                        <a href="@Url.Action("Edit", new { id = danhGia.MaDanhGia })"
+                       class="btn btn-warning btn-sm">Sửa</a>
+
+                    <a href="@Url.Action("Delete", new { id = danhGia.MaDanhGia })"
+                       class="btn btn-danger btn-sm"
+                       onclick="return confirm('Bạn có chắc chắn muốn xóa không?')">Xóa</a>
+                    }
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>

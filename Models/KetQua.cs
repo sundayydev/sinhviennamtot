@@ -21,11 +21,11 @@ namespace CSDLNC_QuanLySVNamTot.Models
 
         [ForeignKey("SinhVien")]
         public string MaSinhVien { get; set; }
-        public SinhVien SinhVien { get; set; }
+        public SinhVien? SinhVien { get; set; }
 
         [ForeignKey("NguoiXetDuyet")]
         public string MaNguoiXetDuyet { get; set; }
-        public NguoiXetDuyet NguoiXetDuyet { get; set; }
+        public NguoiXetDuyet? NguoiXetDuyet { get; set; }
 
     }
 }

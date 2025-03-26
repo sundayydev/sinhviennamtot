@@ -1,0 +1,33 @@
+﻿@model CSDLNC_QuanLySVNamTot.Models.TieuChiSinhVien
+
+@{
+    ViewData["Title"] = "Chỉnh Sửa Đánh Giá";
+}
+
+<h2>Chỉnh Sửa Đánh Giá</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="MaDanhGia" />
+    <input type="hidden" asp-for="MaSinhVien" /> <!-- Giữ lại mã sinh viên -->
+
+    <div class="mb-3">
+        <label class="form-label">Tiêu Chí</label>
+        <select asp-for="MaTieuChi" asp-items="ViewBag.TieuChi" class="form-select"></select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Đánh Giá</label>
+        <select asp-for="DanhGia" class="form-select">
+            <option value="Duyet">Duyệt</option>
+            <option value="KhongDuyet">Không Duyệt</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Nhận Xét</label>
+        <textarea asp-for="NhanXet" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-action="Index" asp-route-maSinhVien="@Model.MaSinhVien" class="btn btn-secondary">Hủy</a>
+</form>
