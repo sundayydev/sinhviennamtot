@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CSDLNC_QuanLySVNamTot</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CSDLNC_QuanLySVNamTot.styles.css" asp-append-version="true" />
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold text-primary" asp-area="" asp-controller="Home" asp-action="Index">
+                Web Sinh Viên 5 tốt
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                @{
+                    var username = Context.Session.GetString("Username");
+                    var role = Context.Session.GetString("Role");
+                }
+
+                <ul class="navbar-nav d-flex align-items-center justify-content-end w-100">
+                    @if (!string.IsNullOrEmpty(username))
+                    {
+                            @if(role == "NguoiXetDuyet")
+                            {
+                                <a class="btn btn-outline-primary btn-sm mb-0 me-3" asp-controller="DangKy" asp-action="Index">Danh sách đăng ký</a>
+                                <a class="btn btn-outline-primary btn-sm mb-0 me-3" asp-controller="SinhVien" asp-action="Index">Sinh Viên</a>
+                            }
+                            
+                            <a class="btn btn-outline-primary btn-sm mb-0 me-3" asp-controller="ThamGiaHoatDong" asp-action="Index">Danh sách hoạt động</a>
+                            <li class="nav-item d-flex align-items-center">
+                            <span class="nav-link text-primary fw-bold">
+                                👤 @username - (@role)
+                            </span>
+                            <a class="btn btn-outline-danger btn-sm mb-0 me-3" href="/Auth/Logout">Đăng xuất</a>
+
+
+                            @if (role == "Admin")
+                            {
+                                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="/sinhvien/index">Sinh Viên</a>
+                                <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="/nguoixetduyet/index">Người Xét Duyệt</a>
+                            }
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="btn btn-outline-primary btn-sm mb-0 me-3" href="/Auth/Login">Đăng nhập</a>                  
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Thêm CSS tùy chỉnh -->
+<style>
+    .navbar {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+        color: #0056b3 !important;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+        color: #007bff !important;
+    }
+    
+    .btn-outline-primary {
+        padding: 0.375rem 1.5rem;
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: white !important;
+    }
+</style>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - CSDLNC_QuanLySVNamTot - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

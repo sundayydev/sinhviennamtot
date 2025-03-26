@@ -1,0 +1,66 @@
+@model CSDLNC_QuanLySVNamTot.Models.ThamGiaHoatDong
+
+@{
+   ViewData["Title"] = "Thêm hoạt động tham gia";
+}
+
+<div class="container mt-5">
+   <h1 class="text-center mb-4">Thêm hoạt động tham gia</h1>
+
+   <div class="row justify-content-center">
+      <div class="col-md-6">
+         <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+               <h5 class="mb-0">Nhập thông tin hoạt động</h5>
+            </div>
+            <div class="card-body">
+               <!-- Hiển thị thông báo nếu có -->
+               @if (TempData["Success"] != null)
+               {
+                  <div class="alert alert-success" role="alert">
+                     @TempData["Success"]
+                  </div>
+               }
+               @if (TempData["Error"] != null)
+               {
+                  <div class="alert alert-danger" role="alert">
+                     @TempData["Error"]
+                  </div>
+               }
+
+               <form asp-action="Create" method="post">
+                  <!-- Tên hoạt động -->
+                  <div class="mb-3">
+                     <label asp-for="TenHoatDong" class="form-label fw-bold"></label>
+                     <input asp-for="TenHoatDong" class="form-control" placeholder="Nhập tên hoạt động" />
+                     <span asp-validation-for="TenHoatDong" class="text-danger"></span>
+                  </div>
+
+                  <!-- Ngày tham gia -->
+                  <div class="mb-3">
+                     <label asp-for="NgayThamGia" class="form-label fw-bold"></label>
+                     <input asp-for="NgayThamGia" type="date" class="form-control" />
+                     <span asp-validation-for="NgayThamGia" class="text-danger"></span>
+                  </div>
+
+                  <!-- Mã tiêu chí (Dropdown) -->
+                  <div class="mb-3">
+                     <label asp-for="MaTieuChi" class="form-label fw-bold">Tiêu chí</label>
+                     <select asp-for="MaTieuChi" class="form-select"
+                        asp-items="@ViewBag.TieuChiList">
+                        <option value="">Chọn tiêu chí</option>
+                     </select>
+                     <span asp-validation-for="MaTieuChi" class="text-danger"></span>
+                  </div>
+
+                  <!-- Nút submit -->
+                  <div class="d-grid gap-2">
+                     <button type="submit" class="btn btn-primary">Lưu hoạt động</button>
+                     <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

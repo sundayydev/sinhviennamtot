@@ -1,0 +1,86 @@
+﻿@model CSDLNC_QuanLySVNamTot.Models.SinhVien
+
+@{
+    ViewData["Title"] = "Trang chủ thông tin sinh viên";
+}
+
+<div class="container mt-5">
+    <!-- Header -->
+    <h1 class="text-center mb-4">Thông tin sinh viên năm tốt</h1>
+
+    <!-- Phần kiểm tra thông tin sinh viên -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Kiểm tra Sinh Viên Năm Tốt</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="CheckStudent" method="post">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Mã sinh viên</label>
+                            <input asp-for="MaSV" class="form-control" placeholder="Nhập mã sinh viên" required />
+                            <span asp-validation-for="MaSV" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Kiểm tra ngay</button>
+                    </form>
+
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="alert alert-info mt-3" role="alert">
+                            @ViewBag.Message
+                        </div>
+                    }
+
+                    @if (ViewBag.SinhVien != null)
+                    {
+                        <div class="mt-4">
+                            <h6 class="fw-bold">Thông tin sinh viên:</h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Mã SV:</strong> @ViewBag.SinhVien.MaSV</li>
+                                <li class="list-group-item"><strong>Họ tên:</strong> @ViewBag.SinhVien.HoTen</li>
+                                <li class="list-group-item"><strong>Ngày sinh:</strong> @ViewBag.SinhVien.NgaySinh.ToString("dd/MM/yyyy")</li>
+                                <li class="list-group-item"><strong>Giới tính:</strong> @(ViewBag.SinhVien.GioiTinh ? "Nam" : "Nữ")</li>
+                                <li class="list-group-item"><strong>Số điện thoại:</strong> @ViewBag.SinhVien.SoDienThoai</li>
+                            </ul>
+                        </div>
+                    }
+
+                    @if (ViewBag.DangKy != null)
+                    {
+                        <div class="mt-4">
+                            <h6 class="fw-bold">Thông tin đăng ký:</h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Mã đăng ký:</strong> @ViewBag.DangKy.MaDangKy</li>
+                                <li class="list-group-item"><strong>Ngày đăng ký:</strong> @ViewBag.DangKy.NgayDangKy.ToString("dd/MM/yyyy")</li>
+                                <li class="list-group-item"><strong>Trạng thái:</strong> @ViewBag.DangKy.TrangThai</li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phần bài viết về sinh viên năm tốt -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Sinh viên năm tốt - Hành trình vươn tới thành công</h5>
+                </div>
+                <div class="card-body">
+                    <p class="lead">
+                        Chương trình "Sinh viên năm tốt" được tổ chức nhằm tôn vinh những sinh viên xuất sắc, có thành tích học tập nổi bật và đóng góp tích cực cho cộng đồng. Đây là cơ hội để các bạn khẳng định bản thân, ghi dấu ấn trong hành trình đại học của mình.
+                    </p>
+                    <p>
+                        Để trở thành "Sinh viên năm tốt", bạn cần đáp ứng các tiêu chí như: điểm trung bình tích lũy từ 3.6 trở lên, tham gia ít nhất 2 hoạt động ngoại khóa, và có ít nhất 1 dự án hoặc sáng kiến vì cộng đồng. Hãy đăng ký ngay hôm nay để không bỏ lỡ cơ hội này!
+                    </p>
+                    <div class="text-center mt-4">
+                        <a asp-controller="DangKy" asp-action="Create" class="btn btn-success btn-lg">Đăng ký ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

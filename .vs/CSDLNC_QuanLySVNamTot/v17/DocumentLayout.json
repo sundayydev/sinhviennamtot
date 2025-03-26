@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|c:\\users\\admin\\documents\\ltweb\\csdlnc_quanlysvnamtot\\views\\taikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|solutionrelative:views\\taikhoan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|c:\\users\\admin\\documents\\ltweb\\csdlnc_quanlysvnamtot\\controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|solutionrelative:controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|c:\\users\\admin\\documents\\ltweb\\csdlnc_quanlysvnamtot\\models\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|solutionrelative:models\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|c:\\users\\admin\\documents\\ltweb\\csdlnc_quanlysvnamtot\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|solutionrelative:viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|c:\\users\\admin\\documents\\ltweb\\csdlnc_quanlysvnamtot\\views\\taikhoan\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|solutionrelative:views\\taikhoan\\dangnhap.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|c:\\users\\admin\\documents\\ltweb\\csdlnc_quanlysvnamtot\\views\\taikhoan\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|solutionrelative:views\\taikhoan\\dangky.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|c:\\users\\admin\\documents\\ltweb\\csdlnc_quanlysvnamtot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9A4FF18-A746-4BE4-8E4C-37E573837580}|CSDLNC_QuanLySVNamTot.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Views\\TaiKhoan\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\TaiKhoan\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Views\\TaiKhoan\\Index.cshtml",
+              "RelativeToolTip": "Views\\TaiKhoan\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAwDYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T04:20:13.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DangKy.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Views\\TaiKhoan\\DangKy.cshtml",
+              "RelativeDocumentMoniker": "Views\\TaiKhoan\\DangKy.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Views\\TaiKhoan\\DangKy.cshtml",
+              "RelativeToolTip": "Views\\TaiKhoan\\DangKy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T04:09:50.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DangNhap.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Views\\TaiKhoan\\DangNhap.cshtml",
+              "RelativeDocumentMoniker": "Views\\TaiKhoan\\DangNhap.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Views\\TaiKhoan\\DangNhap.cshtml",
+              "RelativeToolTip": "Views\\TaiKhoan\\DangNhap.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-12T03:57:04.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T03:50:06.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T03:39:16.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DangKy.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Models\\DangKy.cs",
+              "RelativeDocumentMoniker": "Models\\DangKy.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Models\\DangKy.cs",
+              "RelativeToolTip": "Models\\DangKy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T03:33:09.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaiKhoanController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Controllers\\TaiKhoanController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TaiKhoanController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LTWeb\\CSDLNC_QuanLySVNamTot\\Controllers\\TaiKhoanController.cs",
+              "RelativeToolTip": "Controllers\\TaiKhoanController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T15:31:55.564Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

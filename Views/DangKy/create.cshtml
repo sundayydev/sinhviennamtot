@@ -1,0 +1,47 @@
+@model CSDLNC_QuanLySVNamTot.Models.DangKy
+
+@{
+   ViewData["Title"] = "Đăng ký";
+}
+
+<div class="container mt-4">
+   <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+         <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+               <h2 class="mb-0">Tạo Đăng Ký</h2>
+            </div>
+            <div class="card-body">
+               <form asp-action="Create" method="post">
+                  <div class="mb-3">
+                     <label asp-for="MaSinhVien" class="form-label">Mã Sinh Viên</label>
+                     <input asp-for="MaSinhVien" class="form-control" placeholder="Nhập mã sinh viên" required />
+                     <span asp-validation-for="MaSinhVien" class="text-danger"></span>
+                  </div>
+
+                  <div class="mb-3">
+                     <label asp-for="NgayDangKy" class="form-label">Ngày Đăng Ký</label>
+                     <input asp-for="NgayDangKy" type="date" class="form-control" required />
+                     <span asp-validation-for="NgayDangKy" class="text-danger"></span>
+                  </div>
+
+                  @* <div class="mb-3">
+                     <label asp-for="TrangThai" class="form-label">Trạng Thái</label>
+                     <input asp-for="TrangThai" class="form-control" value="Chờ xét duyệt" readonly />
+                  </div> *@
+
+                  <div class="d-grid">
+                     <button type="submit" class="btn btn-success btn-lg">
+                        <i class="bi bi-check-circle me-2"></i> Đăng Ký
+                     </button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+@section Scripts {
+   <partial name="_ValidationScriptsPartial" />
+}

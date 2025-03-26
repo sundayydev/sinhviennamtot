@@ -1,0 +1,22 @@
+@model IEnumerable<CSDLNC_QuanLySVNamTot.Models.TieuChi>
+
+   <h2 class="text-center mb-3 mt-4">Bảng Tiêu Chí Đánh Giá</h2>
+
+   <table class="table table-bordered text-center align-middle table-warning">
+      <thead>
+         <tr>
+            <th>Tiêu chí</th>
+            <th>Mô tả</th>
+         </tr>
+      </thead>
+      <tbody>
+         @foreach (var tieuChi in Model)
+         {
+            <tr>
+               <td rowspan="@(tieuChi.TenTieuChi.Any() ? 1 : 2)"><strong>@tieuChi.TenTieuChi</strong></td>
+               <td rowspan="@(tieuChi.MoTa.Any() ? 1 : 2)">@tieuChi.MoTa</td>
+            </tr>
+         }
+      </tbody>
+   </table>
+

@@ -1,0 +1,52 @@
+@model CSDLNC_QuanLySVNamTot.Models.DangKy
+
+@{
+   ViewData["Title"] = "Chỉnh Sửa Đăng Ký";
+}
+
+<div class="container mt-4">
+   <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+         <div class="card shadow-sm">
+               <div class="card-header bg-warning text-white">
+                  <h2 class="mb-0">Chỉnh Sửa Đăng Ký</h2>
+               </div>
+               <div class="card-body">
+                  <form asp-action="Edit" method="post">
+                     <input type="hidden" asp-for="MaDangKy" />
+
+                     <div class="mb-3">
+                           <label asp-for="MaSinhVien" class="form-label">Mã Sinh Viên</label>
+                           <input asp-for="MaSinhVien" class="form-control" readonly />
+                     </div>
+
+                     <div class="mb-3">
+                           <label asp-for="NgayDangKy" class="form-label">Ngày Đăng Ký</label>
+                           <input asp-for="NgayDangKy" class="form-control" type="date" readonly />
+                     </div>
+
+                     <div class="mb-3">
+                           <label asp-for="TrangThai" class="form-label">Trạng Thái</label>
+                           <select asp-for="TrangThai" class="form-select">
+                              <option value="Chờ xét duyệt">Chờ xét duyệt</option>
+                              <option value="Đã duyệt">Đã duyệt</option>
+                              <option value="Bị từ chối">Bị từ chối</option>
+                           </select>
+                           <span asp-validation-for="TrangThai" class="text-danger"></span>
+                     </div>
+
+                     <div class="d-grid">
+                           <button type="submit" class="btn btn-warning btn-lg">
+                              <i class="bi bi-save me-2"></i> Cập Nhật
+                           </button>
+                     </div>
+                  </form>
+               </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+@section Scripts {
+      <partial name="_ValidationScriptsPartial" />
+}

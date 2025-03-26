@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CSDLNC_QuanLySVNamTot.props" />
+</Project>

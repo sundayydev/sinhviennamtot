@@ -1,0 +1,72 @@
+@model CSDLNC_QuanLySVNamTot.Models.TieuChiSinhVien
+
+@{
+   ViewData["Title"] = "Đánh giá tiêu chí sinh viên";
+}
+
+<div class="container mt-5">
+   <h1 class="text-center mb-4">Đánh giá tiêu chí sinh viên</h1>
+
+   <div class="row justify-content-center">
+      <div class="col-md-6">
+         <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+               <h5 class="mb-0">Nhập thông tin đánh giá</h5>
+            </div>
+            <div class="card-body">
+               <!-- Form gửi dữ liệu -->
+               <form asp-action="Create" method="post">
+                  <!-- Mã đánh giá (tự động sinh, chỉ hiển thị khi edit) -->
+                  @if (Model != null && Model.MaDanhGia > 0)
+                  {
+                     <div class="mb-3">
+                        <label asp-for="MaDanhGia" class="form-label fw-bold"></label>
+                        <input asp-for="MaDanhGia" class="form-control" readonly />
+                     </div>
+                  }
+
+                  <!-- Điểm đánh giá -->
+                  <div class="mb-3">
+                     <label asp-for="DanhGia" class="form-label fw-bold">Điểm đánh giá</label>
+                     <input asp-for="DanhGia" class="form-control" placeholder="Nhập điểm từ 0 đến 100" />
+                     <span asp-validation-for="DanhGia" class="text-danger"></span>
+                  </div>
+
+                  <!-- Nhận xét -->
+                  <div class="mb-3">
+                     <label asp-for="NhanXet" class="form-label fw-bold"></label>
+                     <textarea asp-for="NhanXet" class="form-control" rows="3"
+                        placeholder="Nhập nhận xét (nếu có)"></textarea>
+                     <span asp-validation-for="NhanXet" class="text-danger"></span>
+                  </div>
+
+                  <!-- Mã sinh viên -->
+                  <div class="mb-3">
+                     <label asp-for="MaSinhVien" class="form-label fw-bold">Mã sinh viên</label>
+                     <input asp-for="MaSinhVien" class="form-control" placeholder="Nhập mã sinh viên" />
+                     <span asp-validation-for="MaSinhVien" class="text-danger"></span>
+                  </div>
+
+                  <!-- Mã tiêu chí -->
+                  <div class="mb-3">
+                     <label asp-for="MaTieuChi" class="form-label fw-bold">Mã tiêu chí</label>
+                     <input asp-for="MaTieuChi" class="form-control" placeholder="Nhập mã tiêu chí" />
+                     <span asp-validation-for="MaTieuChi" class="text-danger"></span>
+                  </div>
+
+                  <!-- Nút submit -->
+                  <div class="d-grid">
+                     <button type="submit" class="btn btn-primary">Lưu đánh giá</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Thêm Bootstrap và script validation -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+@section Scripts {
+   <partial name="_ValidationScriptsPartial" />
+}

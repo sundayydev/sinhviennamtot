@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CSDLNC_QuanLySVNamTot.Models.TaiKhoan>
+
+@{
+    ViewData["Title"] = "Danh sách tài khoản";
+}
+
+<h1>Danh sách tài khoản</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Thêm tài khoản mới</a>
+</p>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.TenDangNhap)</th>
+            <th>@Html.DisplayNameFor(model => model.MatKhau)</th>
+            <th>@Html.DisplayNameFor(model => model.LoaiTaiKhoan)</th>
+            <th>@Html.DisplayNameFor(model => model.SinhVien)</th>
+            <th>@Html.DisplayNameFor(model => model.NguoiXetDuyet)</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.TenDangNhap)</td>
+                <td>
+                    <div class="password-container">
+                        <input type="password" class="form-control d-inline-block password-field" value="@item.MatKhau" readonly />
+                        <button type="button" class="btn btn-sm btn-outline-secondary toggle-password">
+                            👁
+                        </button>
+                    </div>
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.LoaiTaiKhoan)</td>
+                <td>@Html.DisplayFor(modelItem => item.SinhVien.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.NguoiXetDuyet.Email)</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.MaTaiKhoan">Sửa</a>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.MaTaiKhoan">Chi tiết</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.MaTaiKhoan">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".toggle-password").forEach(button => {
+                button.addEventListener("click", function () {
+                    let input = this.previousElementSibling;
+                    if (input.type === "password") {
+                        input.type = "text";
+                        this.innerText = "🔒"; // Đổi icon thành khóa
+                    } else {
+                        input.type = "password";
+                        this.innerText = "👁"; // Đổi icon thành mắt
+                    }
+                });
+            });
+        });
+    </script>
+}
