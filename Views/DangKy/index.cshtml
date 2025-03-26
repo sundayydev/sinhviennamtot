@@ -43,7 +43,11 @@ ViewData["Title"] = "Danh sách đăng ký";
                <td>
                   @if(dk.TrangThai == "Đã duyệt")
                   {
-                     <a href="TieuChiSinhVien/"+"@Url.Action("Index", new { id = dk.MaDangKy })" class="btn btn-success btn-sm">Đánh giá tiêu chi</a>
+                    // <a href="TieuChiSinhVien/"+"@Url.Action("Index", new { id = dk.MaDangKy })" class="btn btn-success btn-sm">Đánh giá tiêu chi</a>
+                    <a class="btn btn-success btn-sm" asp-controller="TieuChiSinhVien" asp-action="Index" asp-route-maSinhVien="@dk.MaSinhVien">
+                        Đánh giá tiêu chí
+                    </a>
+
                   }
                   <a href="@Url.Action("Edit", new { id = dk.MaDangKy })" class="btn btn-warning btn-sm">Sửa</a>
                   <a href="@Url.Action("Delete", new { id = dk.MaDangKy })" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')">Xóa</a>

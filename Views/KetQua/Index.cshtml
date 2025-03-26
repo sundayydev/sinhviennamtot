@@ -1,0 +1,54 @@
+﻿@model List<CSDLNC_QuanLySVNamTot.Models.KetQua>
+
+@{
+    ViewData["Title"] = "Danh Sách Kết Quả";
+    var role = Context.Session.GetString("Role");
+}
+
+<h2 class="mb-4">Danh Sách Kết Quả</h2>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã Sinh Viên</th>
+            <th>Tên Sinh Viên</th>
+            <th>Năm Học</th>
+            <th>Xếp Loại</th>
+            
+            <th>Người Xét Duyệt</th>
+            <th>Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ketQua in Model)
+        {
+            <tr>
+                <td>@ketQua.MaSinhVien</td>
+                <td>@ketQua.SinhVien?.HoTen</td>  
+                <td>@ketQua.NamHoc</td>
+                <td>
+                    <span class="fw-bold px-3 py-1 border rounded text-center
+                    @(ketQua.XetLoai == "Đạt" ? "text-success border-success" :
+                      ketQua.XetLoai == "Không Đạt" ? "text-primary border-primary" :
+                      "text-danger border-danger")">
+                        @ketQua.XetLoai
+                    </span>
+                </td>
+              
+                <td>@ketQua.NguoiXetDuyet?.HoTen</td>  <!-- Hiển thị tên người xét duyệt -->
+                <td class="d-flex align-items-center gap-2">
+                    @if (role == "Admin" || role == "NguoiXetDuyet")
+                    {
+                        <a href="@Url.Action("Edit", new { id = ketQua.MaKetQua })" class="btn btn-warning btn-sm">Sửa</a>
+                        <a href="@Url.Action("Delete", new { id = ketQua.MaKetQua })" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')">Xóa</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (role == "Admin" || role == "NguoiXetDuyet")
+{
+    <a href="@Url.Action("Create")" class="btn btn-primary">Thêm Kết Quả</a>
+}
