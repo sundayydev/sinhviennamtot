@@ -51,6 +51,13 @@ public class DangKyController : Controller
    [HttpPost]
    public async Task<IActionResult> Create(DangKy dangKy)
    {
+
+      if(_context.DangKys.Any(d => d.MaSinhVien == dangKy.MaSinhVien))
+      {
+         ViewBag.Message = "Sinh viên đã đăng ký rồi!";
+         return View();
+      }
+
       _context.DangKys.Add(dangKy);
       await _context.SaveChangesAsync();
       return RedirectToAction(nameof(Index));

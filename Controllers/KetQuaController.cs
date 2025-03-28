@@ -39,83 +39,41 @@ namespace CSDLNC_QuanLySVNamTot.Controllers
 
             return View(ketQua);
         }
-
-        // GET: KetQua/Create
-        public IActionResult Create()
+        
+        public IActionResult Create(string? maSinhVien)
         {
-            ViewBag.SinhVien = new SelectList(_context.SinhViens, "MaSinhVien", "HoTen");
-            ViewBag.NguoiXetDuyet = new SelectList(_context.NguoiXetDuyets, "MaNguoiXetDuyet", "HoTen");
             return View();
         }
-
-        // POST: KetQua/Create
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(KetQua ketQua)
+        public async Task<IActionResult> Create(string? maSinhVien, KetQua ketQua)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(ketQua);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+            var username = HttpContext.Session.GetString("username");
 
-            ViewBag.SinhVien = new SelectList(_context.SinhViens, "MaSinhVien", "HoTen", ketQua.MaSinhVien);
-            ViewBag.NguoiXetDuyet = new SelectList(_context.NguoiXetDuyets, "MaNguoiXetDuyet", "HoTen", ketQua.MaNguoiXetDuyet);
-            return View(ketQua);
+            ketQua.MaNguoiXetDuyet = username;
+            
+            _context.Add(ketQua);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
-
-        // GET: KetQua/Edit/5
+        
         public async Task<IActionResult> Edit(int id)
         {
             var ketQua = await _context.KetQuas.FindAsync(id);
-            if (ketQua == null)
-            {
-                return NotFound();
-            }
-
-            ViewBag.SinhVien = new SelectList(_context.SinhViens, "MaSinhVien", "HoTen", ketQua.MaSinhVien);
-            ViewBag.NguoiXetDuyet = new SelectList(_context.NguoiXetDuyets, "MaNguoiXetDuyet", "HoTen", ketQua.MaNguoiXetDuyet);
             return View(ketQua);
         }
-
-        // POST: KetQua/Edit/5
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, KetQua ketQua)
+        public IActionResult Edit(int id, KetQua ketQua)
         {
-            if (id != ketQua.MaKetQua)
-            {
-                return BadRequest();
-            }
+            var username = HttpContext.Session.GetString("Username");
+            ketQua.MaNguoiXetDuyet = username;
+            _context.KetQuas.Update(ketQua);
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(ketQua);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.KetQuas.Any(k => k.MaKetQua == id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-
-            ViewBag.SinhVien = new SelectList(_context.SinhViens, "MaSinhVien", "HoTen", ketQua.MaSinhVien);
-            ViewBag.NguoiXetDuyet = new SelectList(_context.NguoiXetDuyets, "MaNguoiXetDuyet", "HoTen", ketQua.MaNguoiXetDuyet);
-            return View(ketQua);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
         }
-
-        // GET: KetQua/Delete/5
+        
         public async Task<IActionResult> Delete(int id)
         {
             var ketQua = await _context.KetQuas
@@ -130,10 +88,8 @@ namespace CSDLNC_QuanLySVNamTot.Controllers
 
             return View(ketQua);
         }
-
-        // POST: KetQua/Delete/5
+        
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var ketQua = await _context.KetQuas.FindAsync(id);

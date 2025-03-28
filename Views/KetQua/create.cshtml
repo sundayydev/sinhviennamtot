@@ -1,0 +1,31 @@
+@model CSDLNC_QuanLySVNamTot.Models.KetQua
+
+<h2 class="text-center my-4 fw-semibold">Thêm Kết Quả</h2>
+
+<div class="card shadow p-4">
+   <form asp-action="Create">
+      <div class="mb-3">
+         <label asp-for="NamHoc" class="form-label"></label>
+         <input asp-for="NamHoc" class="form-control" />
+         <span asp-validation-for="NamHoc" class="text-danger"></span>
+      </div>
+
+      <div class="mb-3">
+         <label asp-for="XetLoai" class="form-label"></label>
+         <select asp-for="XetLoai" class="form-select">
+            <option value="Đạt">Đạt</option>
+            <option value="Không đạt">Không đạt</option>
+         </select>
+         <span asp-validation-for="XetLoai" class="text-danger"></span>
+      </div>
+
+      <div class="mb-3">
+         <label asp-for="MaSinhVien" class="form-label"></label>
+         <input asp-for="MaSinhVien" class="form-control" />
+         <span asp-validation-for="MaSinhVien" class="text-danger"></span>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Lưu</button>
+      <a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-left-square-fill"></i> Quay lại</a>
+   </form>
+</div>

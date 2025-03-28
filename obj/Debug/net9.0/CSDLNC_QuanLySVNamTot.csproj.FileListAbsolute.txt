@@ -17,7 +17,6 @@ C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\CSDLNC_Qua
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\scopedcss\bundle\CSDLNC_QuanLySVNamTot.styles.css
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\scopedcss\projectbundle\CSDLNC_QuanLySVNamTot.bundle.scp.css
-C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\compressed\70uxwc4kf3-b9sayid5wm.gz
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\compressed\h18ds5u3xv-61n19gt1b8.gz
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\compressed\2oi0jkkvle-xtxxf3hu2r.gz
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\compressed\wsntz78tat-bqjiyaj88i.gz
@@ -326,3 +325,5 @@ C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\bin\Debug\net9.0\ru\Microso
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\CSDLNC_QuanLySVNamTot.sourcelink.json
+C:\Users\Admin\Documents\LTWeb\CSDLNC_QuanLySVNamTot\obj\Debug\net9.0\compressed\70uxwc4kf3-qsz8rcn8bj.gz

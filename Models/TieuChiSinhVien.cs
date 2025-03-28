@@ -11,9 +11,7 @@ namespace CSDLNC_QuanLySVNamTot.Models
         [DisplayName("Mã đánh giá")]
         public int MaDanhGia { get; set; }
 
-     
-        [Required(ErrorMessage = "Điểm không được để trống")]
-        public string DanhGia { get; set; }
+        public string? DanhGia { get; set; }
 
         [DisplayName("Nhận xét")]
         public string? NhanXet { get; set; }
@@ -25,7 +23,6 @@ namespace CSDLNC_QuanLySVNamTot.Models
         [ForeignKey("TieuChi")]
         public int MaTieuChi { get; set; }
         public TieuChi? TieuChi { get; set; }
-
 
     }
 }

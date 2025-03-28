@@ -14,7 +14,7 @@
             <th>Tên Sinh Viên</th>
             <th>Năm Học</th>
             <th>Xếp Loại</th>
-            
+
             <th>Người Xét Duyệt</th>
             <th>Hành Động</th>
         </tr>
@@ -24,23 +24,24 @@
         {
             <tr>
                 <td>@ketQua.MaSinhVien</td>
-                <td>@ketQua.SinhVien?.HoTen</td>  
+                <td>@ketQua.SinhVien?.HoTen</td>
                 <td>@ketQua.NamHoc</td>
                 <td>
                     <span class="fw-bold px-3 py-1 border rounded text-center
-                    @(ketQua.XetLoai == "Đạt" ? "text-success border-success" :
-                      ketQua.XetLoai == "Không Đạt" ? "text-primary border-primary" :
-                      "text-danger border-danger")">
-                        @ketQua.XetLoai
-                    </span>
-                </td>
-              
-                <td>@ketQua.NguoiXetDuyet?.HoTen</td>  <!-- Hiển thị tên người xét duyệt -->
+                        @(ketQua.XetLoai == "Đạt" ? "text-success border-success" :
+                                                ketQua.XetLoai == "Không Đạt" ? "text-primary border-primary" :
+                                                "text-danger border-danger")">
+                    @ketQua.XetLoai
+                </span>
+            </td>
+
+                <td>@ketQua.NguoiXetDuyet?.HoTen</td> <!-- Hiển thị tên người xét duyệt -->
                 <td class="d-flex align-items-center gap-2">
-                    @if (role == "Admin" || role == "NguoiXetDuyet")
+                @if (role == "Admin" || role == "NguoiXetDuyet")
                     {
                         <a href="@Url.Action("Edit", new { id = ketQua.MaKetQua })" class="btn btn-warning btn-sm">Sửa</a>
-                        <a href="@Url.Action("Delete", new { id = ketQua.MaKetQua })" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')">Xóa</a>
+                        <a href="@Url.Action("Delete", new { id = ketQua.MaKetQua })" class="btn btn-danger btn-sm"
+                            onclick="return confirm('Bạn có chắc chắn muốn xóa không?')">Xóa</a>
                     }
                 </td>
             </tr>
